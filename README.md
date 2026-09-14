@@ -27,15 +27,15 @@ cd VPNStatus.dynamiclakeplugin
 swiftc -parse-as-library -O -o vpn-status VPNStatusPlugin.swift
 ```
 
-### 3. Disconnect Setup (required for NordVPN and ProtonVPN)
+### 3. Disconnect Setup (required for NordVPN only)
 
-The disconnect button requires a one-time sudoers entry to disable auto-reconnect before stopping.
+NordVPN disconnect requires a one-time sudoers entry to disable "Connect on Demand" before stopping.
 
 ```bash
 echo "$(whoami) ALL=(root) NOPASSWD: /usr/bin/python3" | sudo tee /etc/sudoers.d/dynamiclake-vpn-ondemand && sudo chmod 440 /etc/sudoers.d/dynamiclake-vpn-ondemand
 ```
 
-Without this, VPNs will immediately auto-reconnect after disconnecting.
+ProtonVPN disconnect does **not** require this — it uses `networksetup` which runs without sudo.
 
 ## Supported VPNs
 
