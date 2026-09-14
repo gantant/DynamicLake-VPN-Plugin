@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "identifier": "com.dynamiclake.plugins.vpn-status",
+  "name": "VPN Status",
+  "version": "1.0.0",
+  "developerName": "Nebulark",
+  "description": "Shows VPN connection status in the notch with a disconnect button.",
+  "executable": "vpn-status",
+  "arguments": [],
+  "icon": "icon.png",
+  "autoStart": true,
+  "settings": [
+    {
+      "id": "showOpenButton",
+      "type": "switch",
+      "title": "Show Open App Button",
+      "description": "Show a button to open your VPN app.",
+      "systemImage": "arrow.up.forward.app",
+      "tint": "blue",
+      "default": true
+    }
+  ]
+}
